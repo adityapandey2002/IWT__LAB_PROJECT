@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        const booksData = [
+            { 
+                category: 'cse',
+                title: "Introduction to Algorithms", 
+                author: "Thomas H. Cormen", 
+                publisher: "MIT Press", 
+                price: "Rs 500", 
+                coverPage: "image1.jpg" 
+            },
+            { 
+                category: 'cse',
+                title: "Clean Code: A Handbook of Agile Software Craftsmanship", 
+                author: "Robert C. Martin", 
+                publisher: "Prentice Hall", 
+                price: "Rs 400", 
+                coverPage: "image2.jpg" 
+            },
+            { 
+                category: 'ece',
+                title: "Microelectronic Circuits", 
+                author: "Adel S. Sedra", 
+                publisher: "Oxford University Press", 
+                price: "Rs 600", 
+                coverPage: "image3.jpg" 
+            },
+            { 
+                category: 'ece',
+                title: "Fundamentals of Digital Logic with Verilog Design", 
+                author: "Stephen Brown", 
+                publisher: "McGraw-Hill Education", 
+                price: "Rs 550", 
+                coverPage: "image4.jpg" 
+            },
+            { 
+                category: 'mech',
+                title: "Engineering Mechanics: Statics", 
+                author: "J.L. Meriam", 
+                publisher: "Wiley", 
+                price: "Rs 450", 
+                coverPage: "image5.jpg" 
+            },
+            { 
+                category: 'mech',
+                title: "Thermodynamics: An Engineering Approach", 
+                author: "Yunus A. Cengel", 
+                publisher: "McGraw-Hill", 
+                price: "Rs 650", 
+                coverPage: "image6.jpg" 
+            },
+            { 
+                category: 'civil',
+                title: "Structural Analysis", 
+                author: "Russell C. Hibbeler", 
+                publisher: "Pearson", 
+                price: "Rs 550", 
+                coverPage: "image7.jpg" 
+            },
+            { 
+                category: 'civil',
+                title: "Fluid Mechanics", 
+                author: "Frank M. White", 
+                publisher: "McGraw-Hill Education", 
+                price: "Rs 600", 
+                coverPage: "image1.jpg" 
+            }
+        ];
+
+        function loadBooks() {
+            let content = "<table>";
+            content += "<tr><th>Cover Page</th><th>Title</th><th>Author</th><th>Publisher</th><th>Price</th><th>Action</th></tr>";
+            
+            booksData.forEach(book => {
+                content += `
+                    <tr>
+                        <td><img src="${book.coverPage}" alt="Cover Page" class="cover-image"></td>
+                        <td>${book.title}</td>
+                        <td>${book.author}</td>
+                        <td>${book.publisher}</td>
+                        <td>${book.price}</td>
+                        <td><button onclick="addToCart('${book.title}', '${book.price}')">Add to Cart</button></td>
+                    </tr>
+                `;
+            });
+
+            content += "</table>";
+            document.getElementById("books-table").innerHTML = content;
+        }
+
+        function filterBooks(category) {
+            let filteredBooks = booksData.filter(book => book.category === category);
+            let content = "<table>";
+            content += "<tr><th>Cover Page</th><th>Title</th><th>Author</th><th>Publisher</th><th>Price</th><th>Action</th></tr>";
+            
+            filteredBooks.forEach(book => {
+                content += `
+                    <tr>
+                        <td><img src="${book.coverPage}" alt="Cover Page" class="cover-image"></td>
+                        <td>${book.title}</td>
+                        <td>${book.author}</td>
+                        <td>${book.publisher}</td>
+                        <td>${book.price}</td>
+                        <td><button onclick="addToCart('${book.title}', '${book.price}')">Add to Cart</button></td>
+                    </tr>
+                `;
+            });
+
+            content += "</table>";
+            document.getElementById("books-table").innerHTML = content;
+        }
+
+        function addToCart(title, price) {
+            alert(`${title} added to cart for ${price}`);
+            // Implement actual cart functionality here
+        }
+
+        // Load all books initially
+        window.onload = function() {
+            loadBooks();
+        };
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="rrlogo.PNG" alt="Online Book Store Logo">
+        </div>
+        <div>
+            <a href="index.html">Home</a> |
+            <a href="login.html">Login</a> |
+            <a href="catalogue.html">Catalogue</a> |
+            <a href="cart.html">Cart</a>
+        </div>
+    </div>
+    <div class="frames-container">
+        <div class="left-frame">
+            <h3>Departments</h3>
+            <a href="#" onclick="filterBooks('cse');">Computer Science</a>
+            <a href="#" onclick="filterBooks('ece');">Electronics</a>
+            <a href="#" onclick="filterBooks('mech');">Mechanical</a>
+            <a href="#" onclick="filterBooks('civil');">Civil</a>
+        </div>
+        <div class="right-frame" id="books-table">
+            <!-- Books table will be dynamically loaded here -->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        const booksData = {
+            cse: [
+                { 
+                    title: "Introduction to Algorithms", 
+                    author: "Thomas H. Cormen", 
+                    publisher: "MIT Press", 
+                    price: "$50", 
+                    coverPage: "image1.jpg" 
+                },
+                { 
+                    title: "Clean Code: A Handbook of Agile Software Craftsmanship", 
+                    author: "Robert C. Martin", 
+                    publisher: "Prentice Hall", 
+                    price: "$40", 
+                    coverPage: "image2.jpg" 
+                }
+            ],
+            ece: [
+                { 
+                    title: "Microelectronic Circuits", 
+                    author: "Adel S. Sedra", 
+                    publisher: "Oxford University Press", 
+                    price: "$60", 
+                    coverPage: "image3.jpg" 
+                },
+                { 
+                    title: "Fundamentals of Digital Logic with Verilog Design", 
+                    author: "Stephen Brown", 
+                    publisher: "McGraw-Hill Education", 
+                    price: "$55", 
+                    coverPage: "image4.jpg" 
+                }
+            ],
+            mech: [
+                { 
+                    title: "Engineering Mechanics: Statics", 
+                    author: "J.L. Meriam", 
+                    publisher: "Wiley", 
+                    price: "$45", 
+                    coverPage: "image5.jpg" 
+                },
+                { 
+                    title: "Thermodynamics: An Engineering Approach", 
+                    author: "Yunus A. Cengel", 
+                    publisher: "McGraw-Hill", 
+                    price: "$65", 
+                    coverPage: "image6.jpg" 
+                }
+            ],
+            civil: [
+                { 
+                    title: "Structural Analysis", 
+                    author: "Russell C. Hibbeler", 
+                    publisher: "Pearson", 
+                    price: "$55", 
+                    coverPage: "image7.jpg" 
+                },
+                { 
+                    title: "Fluid Mechanics", 
+                    author: "Frank M. White", 
+                    publisher: "McGraw-Hill Education", 
+                    price: "$60", 
+                    coverPage: "image1.jpg" 
+                }
+            ]
+        };
+
+        function loadCatalogue(department) {
+            let books = booksData[department];
+            if (books) {
+                let content = "<h2>Books in " + department.toUpperCase() + "</h2>";
+                books.forEach(function(book) {
+                    content += `
+                        <div class="book-item">
+                            <img src="${book.coverPage}" alt="Cover Page">
+                            <div class="book-details">
+                                <h3>${book.title}</h3>
+                                <p><strong>Author:</strong> ${book.author}</p>
+                                <p><strong>Publisher:</strong> ${book.publisher}</p>
+                                <p><strong>Price:</strong> ${book.price}</p>
+                                <button onclick="addToCart('${book.title}', '${book.price}')">Add to Cart</button>
+                            </div>
+                        </div>
+                    `;
+                });
+                document.getElementById("right-frame-content").innerHTML = content;
+            } else {
+                document.getElementById("right-frame-content").innerHTML = "<h2>No books found for this department.</h2>";
+            }
+        }
+
+        function addToCart(title, price) {
+            alert(`${title} added to cart for ${price}`);
+            // Implement actual cart functionality here
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <img src="rrlogo.PNG" alt="Online Book Store Logo">
+        </div>
+        <div>
+            <a href="index.html">Home</a> |
+            <a href="login.html">Login</a> |
+            <a href="catalogue.html">Catalogue</a> |
+            <a href="cart.html">Cart</a>
+        </div>
+    </div>
+    <!-- <div class="frames-container">
+        <div class="left-frame">
+            <h3>Departments</h3>
+            <a href="#" onclick="loadCatalogue('cse');">Computer Science</a>
+            <a href="#" onclick="loadCatalogue('ece');">Electronics</a>
+            <a href="#" onclick="loadCatalogue('mech');">Mechanical</a>
+            <a href="#" onclick="loadCatalogue('civil');">Civil</a>
+        </div>
+    </div> -->
+    <div class="right-frame">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form action="#" method="post" id="login-form">
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="button-group">
+                    <button type="submit">Login</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    <script src="scripts.js"></script> <!-- Include any specific JavaScript for login page if needed -->
+</body>
+</html>

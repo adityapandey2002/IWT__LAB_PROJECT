@@ -1,0 +1,190 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #333; /* Main text color */
+}
+
+.header {
+    background-color: aquamarine;
+    color: black;
+    text-align: center;
+    padding: 8px 0;
+    position: sticky;
+}
+
+.header a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.header img{
+    box-shadow: 1px 1px 20px black;
+}
+
+.header a:hover{
+    color: #555;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.frames-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.left-frame {
+    flex: 1;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-frame h3 {
+    margin-top: 0;
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    color: #555; /* Darker text color for headings */
+}
+
+.left-frame a {
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.left-frame a:hover {
+    background-color: #ddd;
+}
+
+.right-frame {
+    flex: 3;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items vertically */
+}
+
+.right-frame h2 {
+    margin-top: 0;
+    font-size: 24px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    color: #333; /* Main text color */
+    text-align: center;
+    width: 100%;
+}
+
+.login-box {
+    width: 300px;
+    margin-top: 20px; /* Adjust top margin */
+    padding: 20px;
+    background-color: #f2f2f2; /* Light gray background */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center contents horizontally */
+}
+
+.login-box h2 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+    color: #333; /* Main text color */
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center form elements */
+}
+
+.login-box .input-group {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.login-box label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555; /* Darker text color */
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: calc(100% - 20px); /* Adjust width to match padding */
+    padding: 10px;
+    margin: 6px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.login-box button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+}
+
+.login-box button[type="reset"] {
+    background-color: #f44336; /* Red background */
+    color: white;
+    margin-left: 10px;
+}
+
+.login-box button:hover {
+    opacity: 0.8;
+}
+
+#books-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#books-table th, #books-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#books-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+#books-table .cover-image {
+    max-width: 100px;
+    max-height: 150px;
+    border-radius: 5px;
+}
+
+#books-table button {
+    padding: 8px 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: opacity 0.3s ease;
+}
+
+#books-table button:hover {
+    opacity: 0.8;
+}
