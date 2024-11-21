@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Forms - Lets learn it</title>
+</head>
+<body>
+    <h1 class="form">USER FORM</h1>
+    <form action="post">
+        <div>
+        <label for="username">Username</label><br><br>
+        <input type="text" name="username" id="username" placeholder="Enter your username">
+        </div>
+        <div>
+            <label for="dob">DOB</label><br><br>
+            <input type="date" name="dob" id="dob">
+        </div>
+        <div>
+            <label for="gender">Gender</label><br><br>
+            <input type="radio" name="gender" id="male">
+            <label for="male">Male</label>
+            <input type="radio" name="gender" id="female">
+            <label for="female">Female</label>
+        </div>
+        <div>
+            <label for="phone">Phone number</label><br><br>
+            <input type="number" name="phone" id="phone" placeholder="Enter your phone number">
+        </div>
+        <div>
+            <label for="course">Course</label><br><br>
+            <select name="course" id="course">
+                <option value="mca">MCA</option>
+                <option value="mba">MBA</option>
+                <option value="btech">BTECH</option>
+                <option value="msc">MSC</option>
+            </select>
+        </div>
+        <div>
+            <button type="button" onclick="location.href='thank.html'"><b>SUBMIT</b></button>
+        </div>
+    </form>
+</body>
+</html>
